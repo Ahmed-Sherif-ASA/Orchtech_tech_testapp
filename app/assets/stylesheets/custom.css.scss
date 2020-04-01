@@ -1,0 +1,20 @@
+@import 'bootstrap/dist/css/bootstrap';
+#home-container{
+  margin-top: 25px;
+}
+.jumbotron{
+  background-image: asset-url('OrchtechEgypt.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+#form-container{
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+#message-container{
+  margin-top: 50px;
+  margin-right: 100px;
+}
