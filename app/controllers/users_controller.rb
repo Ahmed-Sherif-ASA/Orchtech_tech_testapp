@@ -9,8 +9,13 @@ class UsersController < ApplicationController
     response_email = Apilayer::Mailbox.check(user_params[:email])
     if response_email["format_valid"]
       if @user.save
-        flash[:success] = "Valid"
-        redirect_to root_path
+        if response_email["smtp_check"]
+          flash[:success] = "Valid"
+          redirect_to root_path
+        else
+          flash[:danger] = "SMTP_CHECK FAILED"
+          redirect_to root_path
+        end
       else
         flash[:danger] = "Invalid entry(My validations)"
         redirect_to root_path
